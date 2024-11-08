@@ -1,0 +1,84 @@
+/*Цвета системы*/
+:root {
+  --mue-white: #fff;
+  --mue-gray: #e0e0e0;
+  --mue-black: #000;
+  --mue-black-soft: #2D2D2D;
+
+  --mue-error: #FF7A00;
+  --mue-error-20: #ff7a0033;
+  --mue-warning: #FFB800;
+  --mue-warning-20: #ffb80033;
+  --mue-accent: #00FF94;
+  --mue-accent-20: #00ff9433;
+
+  --mue-green: #19C02A;
+  --mue-green-20: #19c02a32;
+  --mue-green-gradient: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,35,4,1) 100%);
+}
+
+:root {
+  --color-background: var(--mue-white);
+  --color-btn-default: var(--mue-gray);
+  --color-btn-border: var(--color-btn-default);
+  --color-border: var(--color-text);
+  --color-text: var(--mue-black-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--mue-black-soft);
+    --color-btn-default: var(--mue-black);
+    --color-btn-border: var(--color-btn-default);
+    --color-border: var(--color-text);
+    --color-text: var(--mue-white);
+  }
+}
+
+/*Цвета кастомных темы*/
+.theme-neon {
+  --color-background: --mue-green-gradient;
+  --color-btn-default: var(--color-text);
+  --color-btn-border: var(--color-text);
+  --color-border: var(--color-text);
+  --color-text: var(--mue-green);
+  --font-family: --font-family-neon;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif,
+    'Tektur',
+    'Outline Pixel7';
+;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
