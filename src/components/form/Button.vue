@@ -6,28 +6,17 @@
       class="mue-button"
       id="button"
       :class="[
-        { 'mue-button--transparent': transparent || isNeonTheme },
+        { 'mue-button--transparent': transparent },
         buttonSize,
-        { 'mue-button--neon': isNeonTheme },
       ]"
       :style="[
         { '--color-btn-border': color },
         { backgroundColor: color },
-        { color: isNeonTheme ? color : 'var(--color-text)' },
       ]"
       v-on="$attrs"
     >
       <m-loader v-if="isLoading" />
       <div v-else style="display: contents">
-        <div
-          class="mue-button mue-button--overlay"
-          :class="buttonSize"
-          :style="{
-            '--color-btn-background': isNeonTheme ? color : 'transparent',
-          }"
-        >
-          <slot />
-        </div>
         <slot />
       </div>
     </button>
@@ -79,9 +68,6 @@ export default {
     buttonSize() {
       return `mue-button--size-${this.size}`
     },
-    isNeonTheme() {
-      return this.currentTheme === 'neon'
-    },
   },
 }
 </script>
@@ -95,6 +81,7 @@ export default {
   appearance: none;
   border: none;
   box-shadow: 0 0 0 2px var(--color-btn-border);
+  color: var(--color-text);
   cursor: pointer;
   transition:
     box-shadow 0.5s ease,
@@ -104,31 +91,7 @@ export default {
     background: transparent !important;
   }
 
-  &--overlay {
-    position: absolute;
-    transition: opacity 0.5s ease;
-    opacity: 0;
-    &:hover {
-      background: var(--color-btn-background) !important;
-      opacity: 0.2;
-      box-shadow: none;
-    }
-  }
-
-  &--neon {
-    &:hover:not(:disabled) {
-      box-shadow: 0 0 0 2px var(--color-btn-border) !important;
-      background: var(--color-btn-background);
-    }
-  }
-
   &--size {
-    &-xs {
-      min-height: 25px;
-      padding: 2px 5px;
-      font-size: 12px;
-    }
-
     &-s {
       min-height: 30px;
       padding: 2px 10px;
@@ -152,20 +115,6 @@ export default {
       padding: 2px 25px;
       font-size: 20px;
       border-radius: 30px;
-    }
-
-    &-xxl {
-      min-height: 60px;
-      padding: 2px 35px;
-      font-size: 24px;
-      border-radius: 40px;
-    }
-
-    &-xxxl {
-      min-height: 75px;
-      padding: 2px 40px;
-      font-size: 28px;
-      border-radius: 50px;
     }
   }
 

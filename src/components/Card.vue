@@ -48,7 +48,7 @@ export default {
 <style scoped lang="scss">
 .mue-card {
   border: 2px solid currentColor;
-  border-radius: 20px 0 20px 20px;
+  border-radius: 20px;
   padding: 20px;
 
   &-header {

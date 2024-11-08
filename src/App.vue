@@ -1,50 +1,5 @@
 <template>
   <div class="d-flex flex-column gap-2">
-    <fieldset class="flex-column">
-      <div class="d-flex align-center gap-1">
-        <input
-          v-model="value"
-          type="radio"
-          name="theme"
-          id="system"
-          value="system"
-          checked
-        />
-        <label for="system">Системная</label>
-      </div>
-      <div class="d-flex align-center gap-1">
-        <input
-          v-model="value"
-          type="radio"
-          name="theme"
-          id="light"
-          value="light"
-          disabled
-        />
-        <label for="light">Светлая</label>
-      </div>
-      <div class="d-flex align-center gap-1">
-        <input
-          v-model="value"
-          type="radio"
-          name="theme"
-          id="dark"
-          value="dark"
-          disabled
-        />
-        <label for="dark">Темная</label>
-      </div>
-      <div class="d-flex align-center gap-1">
-        <input
-          v-model="value"
-          type="radio"
-          name="theme"
-          id="neon"
-          value="neon"
-        />
-        <label for="neon">Неоновая</label>
-      </div>
-    </fieldset>
     <div :class="style" class="d-flex flex-column gap-2">
       <m-card
         title="Размеры кнопок"
@@ -52,13 +7,10 @@
         border-color="#445e63"
         class="d-flex gap-2"
       >
-        <m-button size="xs">Button</m-button>
         <m-button size="s">Button</m-button>
         <m-button size="m">Button</m-button>
         <m-button size="l">Button</m-button>
         <m-button size="xl">Button</m-button>
-        <m-button size="xxl">Button</m-button>
-        <m-button size="xxxl">Button</m-button>
       </m-card>
       <m-card title="Цвет кнопки" class="d-flex gap-2">
         <m-button color="var(--mue-error)">Button</m-button>

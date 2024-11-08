@@ -35,16 +35,6 @@
   }
 }
 
-/*Цвета кастомных темы*/
-.theme-neon {
-  --color-background: --mue-green-gradient;
-  --color-btn-default: var(--color-text);
-  --color-btn-border: var(--color-text);
-  --color-border: var(--color-text);
-  --color-text: var(--mue-green);
-  --font-family: --font-family-neon;
-}
-
 *,
 *::before,
 *::after {
@@ -73,9 +63,7 @@ body {
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
-    sans-serif,
-    'Tektur',
-    'Outline Pixel7';
+    sans-serif
 ;
   font-size: 15px;
   text-rendering: optimizeLegibility;
