@@ -30,15 +30,19 @@ export default {
     },
     backgroundColor: {
       type: String,
-      default: null,
+      default: "var(--mue-black-soft)",
+    },
+    kitty: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
     cardBackground() {
+      if (this.kitty)
+        return 'url(src/assets/cattt.svg)'
       if (this.background) {
         return this.backgroundColor
-          ? this.backgroundColor
-          : 'url(src/assets/background.png)'
       }
       return 'unset'
     },
@@ -47,9 +51,10 @@ export default {
 </script>
 <style scoped lang="scss">
 .mue-card {
-  border: 2px solid currentColor;
+  border: 1px solid currentColor;
   border-radius: 20px;
   padding: 20px;
+  background-position: left;
 
   &-header {
     width: 100%;

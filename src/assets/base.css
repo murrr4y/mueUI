@@ -1,20 +1,16 @@
 /*Цвета системы*/
 :root {
-  --mue-white: #fff;
-  --mue-gray: #e0e0e0;
-  --mue-black: #000;
-  --mue-black-soft: #2D2D2D;
+  --mue-white: #fcf9ff;
+  --mue-gray: #A882B0;
+  --mue-black: #00040F;
+  --mue-black-soft: #19181c;
 
-  --mue-error: #FF7A00;
-  --mue-error-20: #ff7a0033;
-  --mue-warning: #FFB800;
-  --mue-warning-20: #ffb80033;
-  --mue-accent: #00FF94;
-  --mue-accent-20: #00ff9433;
 
-  --mue-green: #19C02A;
-  --mue-green-20: #19c02a32;
-  --mue-green-gradient: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,35,4,1) 100%);
+  --mue-primary: #6118e3;
+  --mue-error: #FF0088;
+  --mue-warning: #ecbb18;
+  --mue-success: #26fd9e;
+  --mue-info: #246ef8;
 }
 
 :root {
@@ -28,7 +24,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--mue-black-soft);
-    --color-btn-default: var(--mue-black);
+    --color-btn-default: var(--mue-primary);
     --color-btn-border: var(--color-btn-default);
     --color-border: var(--color-text);
     --color-text: var(--mue-white);

@@ -1,10 +1,8 @@
 <template>
   <div class="d-flex flex-column gap-2">
-    <div :class="style" class="d-flex flex-column gap-2">
+    <div class="d-flex flex-column gap-2">
       <m-card
         title="Размеры кнопок"
-        background
-        border-color="#445e63"
         class="d-flex gap-2"
       >
         <m-button size="s">Button</m-button>
@@ -13,15 +11,14 @@
         <m-button size="xl">Button</m-button>
       </m-card>
       <m-card title="Цвет кнопки" class="d-flex gap-2">
-        <m-button color="var(--mue-error)">Button</m-button>
-        <m-button color="#ff00f7">Button</m-button>
-        <m-button color="#03d1ff">Button</m-button>
-        <m-button color="#ffe603">Button</m-button>
+        <m-button color="var(--mue-primary)">Primary</m-button>
+        <m-button color="var(--mue-error)">Error</m-button>
+        <m-button color="var(--mue-warning">Warning</m-button>
+        <m-button color="var(--mue-success)">Succes</m-button>
+        <m-button color="var(--mue-info)">Info</m-button>
       </m-card>
       <m-card
         title="Состояния кнопок"
-        background
-        background-color="#0000001e"
         class="d-flex gap-2"
       >
         <m-button is-loading>Button</m-button>
@@ -29,6 +26,12 @@
       </m-card>
       <m-card title="Иконки">
         <m-icon icon="user" color="red" />
+      </m-card>
+      <m-card title="Карточки" class="d-flex gap-2">
+        <m-card kitty title="Kitty">Карточка с котиками!</m-card>
+        <m-card border-color="var(--mue-success)" title="Цвет рамки">Укажите свой цвет рамки</m-card>
+        <m-card background title="Фон">Карточка с фоном</m-card>
+        <m-card background background-color="var(--mue-info)" title="Цвет фона">Укажите свой цвет фона</m-card>
       </m-card>
     </div>
   </div>
@@ -48,10 +51,6 @@ export default {
     }
   },
   computed: {
-    style() {
-      this.switchTheme(this.value)
-      return `theme-${this.value}`
-    },
   },
   methods: {
     ...mapActions({
