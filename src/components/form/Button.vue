@@ -3,21 +3,17 @@
     <button
       type="submit"
       :disabled="disabled"
-      class="mue-button"
+      class="mue-button gap-2"
       id="button"
-      :class="[
-        { 'mue-button--transparent': transparent },
-        buttonSize,
-      ]"
-      :style="[
-        { '--color-btn-border': color },
-        { backgroundColor: color },
-      ]"
+      :class="[{ 'mue-button--transparent': transparent }, buttonSize]"
+      :style="[{ '--color-btn-border': color }, { backgroundColor: color }]"
       v-on="$attrs"
     >
       <m-loader v-if="isLoading" />
       <div v-else style="display: contents">
+        <m-icon v-if="prependIcon" :icon="prependIcon" />
         <slot />
+        <m-icon v-if="appendIcon" :icon="appendIcon" />
       </div>
     </button>
   </div>
@@ -27,9 +23,10 @@
 import { mapGetters } from 'vuex'
 import hexToRgbA from '@/utils/HexToRGB.js'
 import MLoader from '@/components/Loader.vue'
+import MIcon from '@/components/Icon.vue'
 export default {
   name: 'MButton',
-  components: { MLoader },
+  components: { MLoader, MIcon },
   methods: { hexToRgbA },
   props: {
     size: {
